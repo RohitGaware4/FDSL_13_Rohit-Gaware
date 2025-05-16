@@ -1,0 +1,122 @@
+#include<stdio.h>
+#include<string.h>
+struct employee
+{
+    char name[20];
+    int id;
+    int salary;
+};
+int main()
+{
+    int n,i;
+    printf("Enter the siza of n = ");
+    scanf("%d",&n);
+    struct employee e[n];
+    printf("Enter the data of employee \n");
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the name = ");
+        scanf("%s",e[i].name);
+        printf("Enter the id = ");
+        scanf("%d",&e[i].id);
+        printf("Enter the salary = ");
+        scanf("%d",&e[i].salary);
+    }
+    printf("The employee data is :\n");
+    for(i=0;i<n;i++)
+    {
+        printf("The record no =%d\n",i);
+        printf("Name=%s\n",e[i].name);
+        printf("Id=%d\n",e[i].id);
+        printf("Salary=%d\n",e[i].salary);
+    }
+    printf("1.Insertion\n");
+    printf("2.Deletion\n");
+    printf("3.Modification\n");
+    printf("4.Display\n");
+    
+    int ch;
+    printf("Enter your choice = ");
+    scanf("%d",&ch);
+    
+    switch(ch)
+    {
+        case 1:int p;
+               printf("Enter the position you want to insert = ");
+               scanf("%d",&p);
+               for(i=0;i>n;i--)
+               {
+                   strcpy(e[i+1].name,e[i].name);
+                   e[i+1].id=e[i].id;
+                   e[i+1].salary=e[i].salary;
+               }
+               printf("Enter the name = ");
+               scanf("%s",e[i].name);
+               printf("Enter the id = ");
+               scanf("%d",&e[i].id);
+               printf("Enter the salary = ");
+               scanf("%d",&e[i].salary);
+               
+               printf("The employee data is :");
+               for(i=0;i<n;i++)
+               {
+                   printf("The record no =%d\n",i);
+                   printf("Name=%s\n",e[i].name);
+                   printf("Id=%d\n",e[i].id);
+                   printf("Salary=%d\n",e[i].salary);
+               }
+               break;
+               
+        case 2:int p1;
+               printf("Enter the position ypu want to delete = ");
+               scanf("%d",&p1);
+               for(i=0;i<n-1;i++)
+               {
+                   strcpy(e[i].name,e[i+1].name);
+                   e[i].id=e[i+1].id;
+                   e[i].salary=e[i+1].salary;
+               }
+               printf("The employee data is :\n");
+               for(i=0;i<n-1;i++)
+               {
+                   printf("The record no =%d\n",i);
+                   printf("Name=%s\n",e[i].name);
+                   printf("Id=%d\n",e[i].id);
+                   printf("Salary=%d\n",e[i].salary);
+               }
+               break;
+               
+        case 3:int p2;
+               printf("Enter the position you want to modify = ");
+               scanf("%d",&p2);
+               printf("\nEnter the name = ");
+               scanf("%s",e[p2].name);
+               printf("\nEnter the id = ");
+               scanf("%d",&e[p2].id);
+               printf("\nEnter the salary = ");
+               scanf("%d",&e[p2].salary);
+               
+               printf("The modified data is :\n");
+               for(i=0;i<n;i++)
+               {
+                   printf("The record no =%d\n",i);
+                   printf("Name=%s\n",e[i].name);
+                   printf("Id=%d\n",e[i].id);
+                   printf("Salary=%d\n",e[i].salary);
+               }
+               break;
+       
+        case 4:printf("The employee information is :\n");
+               for(i=0;i<n;i++)
+               {
+                   printf("The record no =%d\n",i);
+                   printf("Name=%s\n",e[i].name);
+                   printf("Id=%d\n",e[i].id);
+                   printf("Salary=%d\n",e[i].salary);
+               }
+               break;
+               
+        default:printf("Wrong Choice!");
+    }
+    return 0;
+}
