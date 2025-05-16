@@ -1,0 +1,61 @@
+
+#include<stdio.h>
+int main()
+{
+    int n=12,a[n],b=12;
+    int sp=-1;
+    printf("Enter the size of stack = ");
+    scanf("%d",&n);
+    while(b!=0)
+    {
+    printf("1.push\n");
+    printf("2.pop\n");
+    printf("3.Display\n");
+    printf("4.Exit\n");
+    
+    int ch;
+    printf("Enter your choice = ");
+    scanf("%d",&ch);
+    for(int i=sp;i>=0;i--)
+    {
+        printf("stack[%d]=%d\n",i,a[i]);
+    }
+    
+   
+    switch(ch)
+    
+    {
+        case 1:sp++;
+               if(sp>n-1)
+               {
+                   printf("Stack Overflow\n");
+                   break;
+               }
+               
+               printf("\nEnter the elements =");
+               scanf("%d",&a[sp]);
+               
+               break;
+        case 2:if(sp==-1)
+               {
+                   printf("Stack Underflow\n");
+                   break;
+               }
+               printf("\nElement has been popped\n");
+               sp--;
+               
+               break;
+        case 3:printf("The stack is :\n");
+               for(int i=sp-1;i>=0;i--)
+               {
+                   printf("stack[%d]=%d\n",i,a[i]);
+               }
+               break;
+        case 4:b=0;
+               printf(" Succesfully Exit");
+               break;
+    }
+    }
+    
+    
+}
