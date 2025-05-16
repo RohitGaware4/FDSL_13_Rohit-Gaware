@@ -1,0 +1,61 @@
+
+#include<stdio.h>
+int main()
+{
+    int n=12,Queue[n],b=12;
+    int rear=-1,front=-1;
+    printf("Enter the size of Queue = ");
+    scanf("%d",&n);
+    while(b!=0)
+    {
+    printf("1.insert\n");
+    printf("2.delete\n");
+    printf("3.Display\n");
+    printf("4.Exit\n");
+    
+    int ch;
+    printf("Enter your choice = ");
+    scanf("%d",&ch);
+    for(int i=front+1;i<=rear;i++)
+    {
+        printf("%d\t",Queue[i]);
+    }
+    
+   
+    switch(ch)
+    
+    {
+        case 1:
+               if(rear>=n-1)
+               {
+                   printf("Queue if full\n");
+                   break;
+               }
+               rear++;
+               printf("\nEnter the elements =");
+               scanf("%d",&Queue[rear]);
+               
+               break;
+        case 2:if(front==rear)
+               {
+                   printf("Queue is empty\n");
+                   break;
+               }
+               printf("\nElement has been deleted\n");
+               front++;
+               
+               break;
+        case 3:printf("\nThe Queue is :\n");
+               for(int i=front+1;i<=rear;i++)
+               {
+                   printf("Queue[%d]=%d\n",i,Queue[i]);
+               }
+               break;
+        case 4:b=0;
+               printf(" Succesfully Exit");
+               break;
+    }
+    }
+    
+    
+}
