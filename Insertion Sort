@@ -1,0 +1,45 @@
+#include<stdio.h>
+int main()
+{
+    int n=20,a[n],temp=0,i,k,b,j;
+    printf("Enter the size = ");
+    scanf("%d",&n);
+    printf("Enter %d array elements = ",n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+  
+    for(i=1;i<n;i++)
+    {
+     
+        for(j=0;j<i;j++)
+        {
+            if(a[j]>a[i])
+            {
+                temp=a[i];
+               
+                for(k=i-1;k>=j;k--)
+                {
+                    a[k+1]=a[k];
+                   
+                }
+                a[j]=temp;
+            }           
+        }
+        printf("\nAfter pass =%d\n",i+1);
+        for(b=0;b<n;b++)
+        {
+            printf("%d ",a[b]);
+        }
+        
+    }
+    printf("\nsorted = \n");
+        for(b=0;b<n;b++)
+        {
+       
+        printf("%d ",a[b]);
+        }
+   
+    return 0;
+}
