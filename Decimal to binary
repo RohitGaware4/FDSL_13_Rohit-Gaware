@@ -1,0 +1,26 @@
+#include<stdio.h>
+
+int main()
+{
+    int max=100,stack[max],decimal,i;
+    int top=-1;
+    printf("Enter the decimal number = ");
+    scanf("%d",&decimal);
+    if(decimal==0)
+    {
+        printf("binary of  is = 0");
+    }
+    else
+    {
+        while(decimal>0)
+        {
+            stack[++top]=decimal%2;
+            decimal/=2;
+        }
+        for (i=top;i>=0;i--)
+        {
+            printf("%d\t",stack[i]);
+        }
+    }
+    return 0;
+}
