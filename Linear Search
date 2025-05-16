@@ -1,0 +1,34 @@
+#include<stdio.h>
+int main()
+{
+    int n=12,i,a[n],s,sum=0,count;
+    printf("Enter the size you want = ");
+    scanf("%d",&n);
+    
+    printf("Enter the %d elements = ",n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("Enter the number you want to search = ");
+    scanf("%d",&s);
+    for(i=0;i<n;i++)
+    {
+        if(s==a[i])
+        {
+            printf("\nThe element is present at a[%i] position\n",i);
+            sum++;
+        }
+        
+    }
+    printf("\ncount=%d\n",sum);
+    
+    if(sum==0)
+    {
+        printf("Element not present\n");
+    }
+    printf("Elenent found %d times",sum);
+    return 0;
+}
+
+
