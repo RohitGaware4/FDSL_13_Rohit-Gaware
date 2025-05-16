@@ -1,0 +1,72 @@
+#include<stdio.h>
+#include<string.h>
+struct callinfo
+{
+    char name[20];
+    long int mobile_no;
+};
+int main()
+{
+    
+    int n=12,b=12;
+    int sp=-1;
+    
+    
+    printf("Enter the size of stack = ");
+    scanf("%d",&n);
+    
+    struct callinfo c[n];
+    while(b!=0)
+    {
+    printf("1.push\n");
+    printf("2.pop\n");
+    printf("3.Display\n");
+    printf("4.Exit\n");
+    
+    int ch;
+    printf("Enter your choice = ");
+    scanf("%d",&ch);
+    
+    for(int i=sp;i>=0;i--)
+    {
+        printf("stack[%d] =%s %ld\n", i, c[i].name, c[i].mobile_no);
+    }
+    
+   
+    switch(ch)
+    
+    {
+        case 1:
+               if(sp>=n-1)
+               {
+                   printf("Stack Overflow\n");
+                   break;
+               }
+               
+               sp++;
+               printf("\nEnter the name and mobile no = ");
+               scanf("%s %ld",c[sp].name,&c[sp].mobile_no);
+               break;
+        case 2:if(sp==-1)
+               {
+                   printf("Stack Underflow\n");
+                   break;
+               }
+               printf("\nElement has been popped\n");
+               sp--;
+               
+               break;
+        case 3:printf("The stack is :\n");
+               for(int i=sp;i>=0;i--)
+               {
+                    printf("stack[%d] =%s %ld\n", i, c[i].name, c[i].mobile_no);
+               }
+               break;
+        case 4:b=0;
+               printf(" Succesfully Exit");
+               break;
+    }
+    }
+    
+    
+}
